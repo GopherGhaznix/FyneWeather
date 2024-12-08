@@ -7,6 +7,7 @@ import (
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/theme"
+	"github.com/GopherGhaznix/FyneWeather/bundled"
 	timebasedcard "github.com/GopherGhaznix/FyneWeather/components/timebasedCard"
 )
 
@@ -22,11 +23,11 @@ func View() fyne.CanvasObject {
 		container.NewHScroll(
 			container.NewVBox(
 				container.NewHBox(
-					timebasedcard.View("./assets/animated/isolated-thunderstorms.svg", "7 AM", "28°"),
-					timebasedcard.View("./assets/animated/cloudy.svg", "7 AM", "28°"),
-					timebasedcard.View("./assets/animated/cloudy-3-day.svg", "7 AM", "28°"),
-					timebasedcard.View("./assets/animated/rain-and-sleet-mix.svg", "7 AM", "28°"),
-					timebasedcard.View("./assets/animated/snowy-2.svg", "7 AM", "28°"),
+					timebasedcard.View(bundled.ResourceIsolatedThunderstormsSvg, "7 AM", "28°"),
+					timebasedcard.View(bundled.ResourceCloudySvg, "7 AM", "28°"),
+					timebasedcard.View(bundled.ResourceCloudy3DaySvg, "7 AM", "28°"),
+					timebasedcard.View(bundled.ResourceRainAndSleetMixSvg, "7 AM", "28°"),
+					timebasedcard.View(bundled.ResourceSnowy2Svg, "7 AM", "28°"),
 				),
 				_space, // just for decent amount of spacing
 			),

@@ -5,6 +5,7 @@ import (
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/theme"
+	"github.com/GopherGhaznix/FyneWeather/bundled"
 	"github.com/GopherGhaznix/FyneWeather/config"
 )
 
@@ -26,7 +27,7 @@ func View() fyne.CanvasObject {
 			),
 		),
 		container.NewGridWrap(fyne.NewSize(125, 90),
-			canvas.NewImageFromFile("./assets/animated/isolated-thunderstorms.svg"),
+			canvas.NewImageFromResource(bundled.ResourceIsolatedThunderstormsSvg),
 		),
 	)
 }

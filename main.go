@@ -1,29 +1,18 @@
 package main
 
 import (
-	"log"
-	"os"
-
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/theme"
 	ui "github.com/GopherGhaznix/FyneWeather/UI"
+	"github.com/GopherGhaznix/FyneWeather/bundled"
 	"github.com/GopherGhaznix/FyneWeather/config"
 	"github.com/GopherGhaznix/FyneWeather/state"
 )
 
 func init() {
-	fontBytes, err := os.ReadFile("./assets/font/Teko/static/Teko-SemiBold.ttf")
-	if err != nil {
-		log.Fatal(err)
-	}
-	config.FontTekoBold = fyne.NewStaticResource("Teko Light", fontBytes)
-
-	font2Bytes, err := os.ReadFile("./assets/font/Teko/static/Teko-Regular.ttf")
-	if err != nil {
-		log.Fatal(err)
-	}
-	config.FontTekoNormal = fyne.NewStaticResource("Teko Light Normal", font2Bytes)
+	config.FontTekoBold = fyne.NewStaticResource("Teko Light", bundled.ResourceTekoSemiBoldTtf.Content())
+	config.FontTekoNormal = fyne.NewStaticResource("Teko Light Normal", bundled.ResourceTekoRegularTtf.Content())
 }
 
 func main() {

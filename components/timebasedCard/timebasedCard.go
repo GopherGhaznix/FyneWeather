@@ -10,7 +10,7 @@ import (
 	"github.com/GopherGhaznix/FyneWeather/config"
 )
 
-func View(image, hour, temp string) fyne.CanvasObject {
+func View(image *fyne.StaticResource, hour, temp string) fyne.CanvasObject {
 
 	hourText := canvas.NewText(hour, theme.Color(theme.ColorNamePressed))
 	hourText.TextSize = 12
@@ -35,7 +35,7 @@ func View(image, hour, temp string) fyne.CanvasObject {
 					canvas.NewText("-", color.Transparent), // just for decent amount of spacing
 					container.NewCenter(container.NewGridWrap(
 						fyne.NewSize(55, 42),
-						canvas.NewImageFromFile(image),
+						canvas.NewImageFromResource(image),
 					)),
 				),
 			),

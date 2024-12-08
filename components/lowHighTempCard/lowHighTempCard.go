@@ -8,7 +8,7 @@ import (
 	"fyne.io/fyne/v2/widget"
 )
 
-func View(label, image, low, high string) fyne.CanvasObject {
+func View(label, low, high string, image *fyne.StaticResource) fyne.CanvasObject {
 
 	lowTempText := canvas.NewText(low, theme.Color(theme.ColorNamePressed))
 	lowTempText.TextSize = 15
@@ -20,7 +20,7 @@ func View(label, image, low, high string) fyne.CanvasObject {
 		container.NewGridWrap(fyne.NewSize(85, 20), widget.NewLabelWithStyle(label, fyne.TextAlignLeading, fyne.TextStyle{})),
 		container.NewCenter(container.NewGridWrap(
 			fyne.NewSize(38, 28),
-			canvas.NewImageFromFile(image),
+			canvas.NewImageFromResource(image),
 		)),
 		container.NewAdaptiveGrid(2,
 			container.NewCenter(lowTempText),
